@@ -1,0 +1,41 @@
+{{define "content"}}
+{{with .ProductForm}}
+<div class="page-header">
+  <h2>{{.Heading}}</h2>
+</div>
+
+{{if .Errors}}
+<div class="form-errors">
+  <strong>Please fix the following:</strong>
+
+  <ul>
+    {{range .Errors}}
+    <li>{{.}}</li>
+    {{end}}
+  </ul>
+</div>
+{{end}}
+
+<form class="form" action="{{.Action}}" method="POST">
+  <div class="field">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" value="{{.Product.Name}}" required />
+  </div>
+
+  <div class="field">
+    <label for="price">Price</label>
+    <input id="price" type="number" name="price" value="{{.Product.Price}}" required />
+  </div>
+
+  <div class="field">
+    <label for="stock">Stock</label>
+    <input id="stock" type="number" name="stock" value="{{.Product.Stock}}" required />
+  </div>
+
+  <div class="form-actions">
+    <button class="button" type="submit">Submit</button>
+    <a class="button button--secondary" href="/products">Cancel</a>
+  </div>
+</form>
+{{end}}
+{{end}}

@@ -1,0 +1,31 @@
+{{define "content"}}
+<!-- <h3>This is the Heading</h3>
+    <p>this is the content</p> -->
+
+<div class="page-header">
+  <h2>Home</h2>
+</div>
+
+<section class="card">
+  <h3>Looping through slices</h3>
+  <ol>
+    <!-- to fetch key and value of slice -->
+    <!-- {{range $k, $v := .}}
+              <li>{{$k}}: {{$v}}</li>
+          {{end}} -->
+    {{range .Hewan}}
+    <li>{{.}}</li>
+    {{end}}
+  </ol>
+</section>
+
+<section class="card">
+  <h3>Looping through slice of struct</h3>
+  <ol>
+    {{range .Users}}
+    <li>{{.Name}}; email: {{.Email}}; age: {{.Age}}</li>
+    {{end}}
+  </ol>
+</section>
+
+{{end}}

@@ -1,0 +1,15 @@
+{{define "content"}}
+
+<div class="page-header">
+  <h2>Announcement</h2>
+</div>
+
+<section class="card">
+  {{if .Is_pass}}
+  <p class="notice notice--success">You pass</p>
+  {{else}}
+  <p class="notice notice--fail">You fail, womp womp</p>
+  {{end}}
+</section>
+
+{{end}}
